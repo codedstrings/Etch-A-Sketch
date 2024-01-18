@@ -2,6 +2,7 @@
   --primary-grey: #d9d9d9;
   --hover-grey: #b8b7b7;
   --primary-black: #000;
+  --grid-lines: #932929be;
 }
 
 * {
@@ -52,7 +53,7 @@ html {
 }
 .grid-box {
   flex: 1;
-  border: 1px solid black;
+  border: 1px solid var(--grid-lines);
   background-color: var(--primary-grey);
 }
 

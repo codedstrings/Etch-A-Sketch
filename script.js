@@ -1,6 +1,6 @@
 const mainContainer = document.querySelector(".main-container");
 const drawingBoard = document.querySelector(".drawing-board");
-let gridSize = 16;
+let gridSize = 20;
 
 function drawBoard() {
   console.log("drawing board");
