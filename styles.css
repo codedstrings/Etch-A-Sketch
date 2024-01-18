@@ -8,19 +8,23 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .drawing-board {
   border: 1px solid var(--primary-black);
   background-color: var(--primary-grey);
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   transition: background-color 0.3s ease;
   display: flex;
   flex-wrap: wrap;
