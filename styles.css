@@ -2,7 +2,8 @@
   --primary-grey: #d9d9d9;
   --hover-grey: #b8b7b7;
   --primary-black: #000;
-  --grid-lines: #932929be;
+  --grid-lines: #00000080;
+  --brush-color: black;
 }
 
 * {
@@ -56,7 +57,9 @@ html {
   border: 1px solid var(--grid-lines);
   background-color: var(--primary-grey);
 }
-
+.colored-grid{
+  background-color: var(--brush-color);
+}
 .heading {
   color: #000;
   text-align: center;

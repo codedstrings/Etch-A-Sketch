@@ -1,6 +1,6 @@
 const mainContainer = document.querySelector(".main-container");
 const drawingBoard = document.querySelector(".drawing-board");
-let gridSize = 20;
+let gridSize = 100;
 
 function drawBoard() {
   console.log("drawing board");
@@ -15,12 +15,21 @@ function drawBoard() {
     for (let j = 0; j < gridSize; j++) {
       let gridBox = document.createElement("div");
       gridBox.className = "grid-box";
+      gridBox.addEventListener("mouseover", startDrawing);
       gridRow.appendChild(gridBox);
     }
     drawingBoard.appendChild(gridRow);
   }
-
   drawingBoard.removeEventListener("click", drawBoard);
 }
 
 drawingBoard.addEventListener("click", drawBoard);
+
+function startDrawing(event) {
+  // Access the gridBox that the event has fired on
+  const gridBox = event.target;
+  gridBox.classList.add("colored-grid");
+  //remove event listener after coloring. 
+  gridBox.removeEventListener("mouseover",startDrawing);
+}
+
