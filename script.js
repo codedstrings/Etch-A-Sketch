@@ -22,7 +22,7 @@ function drawBoard() {
     }
     drawingBoard.appendChild(gridRow);
   }
-  drawingBoard.removeEventListener("click", drawBoard);
+  drawingBoard.removeEventListener("click", pageActive);
   pageLoaded = true;
 }
 //entry point
