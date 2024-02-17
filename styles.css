@@ -26,7 +26,6 @@ html {
 .drawing-board {
   border: 1px solid var(--primary-black);
   background-color: var(--primary-grey);
-  border-radius: 5px;
   width: 700px;
   height: 700px;
   transition: background-color 0.3s ease;
@@ -98,6 +97,7 @@ html {
 .control-board {
   border: 1px solid #000;
   background-color: #d9d9d9;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   /* padding: 48px 30px 48px 47px; */
