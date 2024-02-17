@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,23 @@
 </head>
 
 <body>
-    <div class="main-container">
-      <div class="drawing-board inactive">
-        <h1 class="heading">Etch-A-Sketch</h1>
-        <p class="description">-click to toggle drawing-</p>
-      </div>
+  <div class="main-container">
+    <div class="drawing-board inactive">
+      <h1 class="heading">Etch-A-Sketch</h1>
+      <p class="description">-click to toggle drawing-</p>
+    </div>
 
-      <div class="control-board">
-        <div class="grid-size-btn-container">
-          <button class="grid-size-btn">Change Grid Size</button>
-        </div>
-        <!-- <span class="brush-div">
+    <div class="control-board">
+      <div class="grid-size-btn-container">
+        <!-- <button class="grid-size-btn">Change Grid Size</button> -->
+        <p>Grid Size: <span class="sliderValue">16</span></p>
+
+        <input type="range" class="gridSizeSlider" min="16" max="100" value="16">
+
+        <!-- Create a button for activating the grid size change -->
+        <button class="activateGridSizeBtn">Redraw Board</button>
+      </div>
+      <!-- <span class="brush-div">
             <div class="div"></div>
             <div class="div-2">Brush color</div>
           </span>
@@ -48,8 +54,9 @@
             <div class="div-16">Toggle Grid lines</div>
           </span>
           <span class="span-8">Clear</span> -->
-      </div>
     </div>
-  </body>
-  <script src="script.js"></script>
-  </html>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

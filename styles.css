@@ -26,6 +26,7 @@ html {
 .drawing-board {
   border: 1px solid var(--primary-black);
   background-color: var(--primary-grey);
+  border-radius: 5px;
   width: 700px;
   height: 700px;
   transition: background-color 0.3s ease;
@@ -100,21 +101,30 @@ html {
   display: flex;
   flex-direction: column;
   /* padding: 48px 30px 48px 47px; */
-  width: 200px;
+  width: 300px;
   height: 700px;
   justify-content: center;
   align-items: center;
 }
 .grid-size-btn-container{
-  border: 1px solid black;
+  width: 100%;
   border-radius: 5px;
-  /* padding: 10px; */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.grid-size-btn{
+.activateGridSizeBtn{
   border-radius: 5px;
-  border: 1px solid black;
-  border-style: none;
+  border: 1px solid transparent;
   padding: 10px;
+}
+.activateGridSizeBtn:hover{
+  cursor: pointer;
+  border: 1px solid black;
+}
+input[type="range"] {
+  width: 100%;
 }
 /* figma code */
 

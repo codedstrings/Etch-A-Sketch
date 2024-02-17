@@ -1,11 +1,16 @@
 const mainContainer = document.querySelector(".main-container");
 const drawingBoard = document.querySelector(".drawing-board");
-const gridSizeBtn = document.querySelector(".grid-size-btn");
+// const gridSizeBtn = document.querySelector(".grid-size-btn");
+
+const gridSizeSlider = document.querySelector(".gridSizeSlider");
+const sliderValue = document.querySelector(".sliderValue");
+const activateGridSizeBtn = document.querySelector(".activateGridSizeBtn");
+
 let gridSize = 16;
 let pageLoaded = false;
 
 function drawBoard() {
-  console.log("drawing board");
+  console.log(`drawing board, grid-size: ${gridSize}`);
   drawingBoard.classList.remove("inactive");
   drawingBoard.classList.add("active");
   drawingBoard.style.setProperty("--gridSize", gridSize);
@@ -25,19 +30,35 @@ function drawBoard() {
   drawingBoard.removeEventListener("click", pageActive);
   pageLoaded = true;
 }
-//entry point
+
+
+
+//Entry point
 drawingBoard.addEventListener("click", pageActive);
 //pageActive draws the first grid and activates control board buttons
 function pageActive() {
   //draw default 16x16 drawingboard
   drawBoard();
-  //activate grid size change button
-  gridSizeBtn.addEventListener("click", () => {
-    gridSize = prompt("What's the grid size you want?");
-    if (gridSize >= 16 && gridSize <= 100) {
-      drawBoard();
-    } else alert("Enter a grid size between 16-100");
+
+  sliderValue.innerText = gridSizeSlider.value;
+  // Update the displayed value when the slider is moved
+  gridSizeSlider.addEventListener("input", function () {
+    sliderValue.innerText = this.value;
+    console.log("slidermoved")
   });
+
+  // Activate grid size change on button click
+  activateGridSizeBtn.addEventListener("click", function () {
+    console.log("buttton click")
+    console.log(gridSizeSlider.value);
+    gridSize = gridSizeSlider.value;
+    if (gridSize >= 16 && gridSize <= 100) {
+      drawBoard(); // Assuming drawBoard is a function to update the grid based on the new size
+    } else {
+      alert("Enter a grid size between 16-100");
+    }
+  });
+
 }
 
 function startDrawing(event) {
@@ -47,3 +68,7 @@ function startDrawing(event) {
   //remove event listener after coloring.
   gridBox.removeEventListener("mouseover", startDrawing);
 }
+
+
+
+
